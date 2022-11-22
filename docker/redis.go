@@ -17,7 +17,7 @@ func (m *Container) StartRedisDocker(port int, pass string) {
 	}
 
 	containerOption := ContainerOption{
-		Name:              fmt.Sprintf("test-redis-%d",time.Now().Unix()),
+		Name:              fmt.Sprintf("test-redis-%d",time.Now().UnixNano()),
 		Options:           envVar,
 		MountVolumePath:   "/var/lib/redis",
 		ContainerFileName: m.ImageName,

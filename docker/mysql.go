@@ -21,7 +21,7 @@ func (m *Container) StartMysqlDocker(user, password string, port int, dbname str
 	}
 
 	containerOption := ContainerOption{
-		Name:              fmt.Sprintf("test-mysql-%d",time.Now().Unix()),
+		Name:              fmt.Sprintf("test-mysql-%d",time.Now().UnixNano()),
 		Options:           mysqlOptions,
 		MountVolumePath:   "/var/lib/mysql",
 		ContainerFileName: m.ImageName,
